@@ -39,6 +39,15 @@ class Solution:
         coordA = (a//3, a%3)
         coordB = (b//3, b%3)
 
+        if coordA[0] == coordB[0] and coordA[1] == coordB[1]:
+            return 0
+        
+        if max(coordA) > 2 or max(coordB) > 2:
+            return 0
+
+        if max(coordA) < 0 or max(coordB) < 0:
+            return 0
+
         if(coordA[1] == coordB[1]):
             if coordA[0]+coordB[0] == 1:
                 return 7+coordA[1]
